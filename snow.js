@@ -36,8 +36,6 @@ var snow = function() {
             })(),
             i = 0;
 
-        // document.getElementById(canvasId).height = canvasHeight;
-        // document.getElementById(canvasId).width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.width = canvasWidth;
 
@@ -68,15 +66,11 @@ var snow = function() {
         }
 
         var fall = function(){
-            //context.fillStyle = "#000";
-            // context.fillStyle = "rgba(0,0,0,0)";
-            // context.fillRect(0,0,420,280);
             context.clearRect(0,0,canvasWidth,canvasHeight);
             context.fillStyle = snowColor;
             for(var i=0,len=snowPos.length;i<len;i++){
                 context.save();
                 context.translate(snowPos[i].x,snowPos[i].y);
-                // context.rotate((Math.random()*6-3)*Math.PI/10);
 
                 snowPos[i].x += Math.random()*0.03 - 0.01;
                 snowPos[i].y += Math.random()*speed;
